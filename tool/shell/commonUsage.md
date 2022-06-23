@@ -182,6 +182,9 @@ A: 源码的安装一般由3个步骤组成：配置(configure)、编译(make)�
 
 Makefile,运行不了./configure,暂时不清楚原因
 
+[windows使用make命令的方法](https://www.eemaker.com/git-bash-make.html)
+
+
 ### 6. string
 
 ```
