@@ -28,9 +28,8 @@
 
 ## 数据库
 
-### MySQL
-
 1. [MySQL工作流程](./database/MySQL/howtowork.md)
+2. [递归查询](./database/recursive.md)
 
 ## docker
 1. [docker学习](./docker/dockerStudy.md)
@@ -41,6 +40,13 @@
 3. [函数](./go/function.md)
 4. [生产者消费者模型](./go/productconsumermodel.md)
 5. [反射](./go/reflect.md)
+6. [引包](./go/package.md)
+7. [gopath中的工具](./go/pathtool.md)
+8. [vscode go插件参考配置](./go/vscodeSettings.md)
+9. [加锁](./go/lock.md)
+10. [模板](./go/template.md)
+11. [文件处理](./go/file.md)
+
 
 ## 面经
 1. [汇总](./interviewExperience/summary.md)
@@ -48,20 +54,22 @@
 
 ## Java
 
-### 基础
-
 1. [基础](./java/basic/basic.md)
-
-### 线程
-
-1. [线程生命周期](./java/thread/ThreadLifeCycle.md)
-2. [ThreadLocal](./java/thread/ThreadLocal.md)
+2. [线程生命周期](./java/thread/ThreadLifeCycle.md)
+3. [ThreadLocal](./java/thread/ThreadLocal.md)
+4. [Spring依赖注入](./java/dependencyinject.md)
 
 ## jsp
 1. [jsp标签](./jsp/tag.md)
 
 ## k8s
 1. [kubectl使用](./k8s/kubectl.md)
+
+### 面试题
+
+#### 基础相关
+
+1. [json包里使用的时候，结构体里的变量不加tag能不能正常转成json里的字段？](./interviewExperience/interviewquestions/jsonWithoutTag.md)
 
 ## midi
 1. [midi-音乐格式](./midi/midi.md)
