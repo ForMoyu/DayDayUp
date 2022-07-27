@@ -1,8 +1,5 @@
 # 使用kind进行本地k8s部署
 
-[kind Kubernetes部署简单应用 上篇](https://zhuanlan.zhihu.com/p/431311301)
-[Kind Kubernetes 部署简单应用 下篇 Ingress](https://zhuanlan.zhihu.com/p/433351257)
-
 ## kind下载
 [快速下载](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
 
@@ -12,7 +9,7 @@
 ### 创建集群
 
 ```
-kind create cluster --name tsk8s --config=k8s/kind/cluster.yaml
+kind create cluster --config=k8s/kind/cluster.yaml
 ```
 
 ### 部署Deployment
@@ -40,12 +37,65 @@ kubectl describe svc/httpd-svc
 ```
 
 ### 部署nginx-ingress
+[kind安装ingress-nginx](https://kind.sigs.k8s.io/docs/user/ingress/#ingress-nginx)
+
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.47.0/deploy/static/provider/kind/deploy.yaml
+curl -Lo deploy.yaml https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml --ssl-no-revoke
 
+# 参考deploy
 https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
+
+https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+
+https://raw.githubusercontent.com/Kong/kubernetes-ingress-controller/master/deploy/single/all-in-one-dbless.yaml
+
+```
+
+因为国内无法拉外网的镜像, 所以我们镜像地址替换成阿里云的
+
+```
+# 原image
+registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.1.1
+# 替换镜像
+registry.cn-hangzhou.aliyuncs.com/google_containers/kube-webhook-certgen:v1.1.1
+
+# 原image
+registry.k8s.io/ingress-nginx/controller:v1.3.0
+# 替换镜像
+registry.cn-hangzhou.aliyuncs.com/google_containers/nginx-ingress-controller:v1.3.0
+```
+
+本地把镜像拉下来, 然后把镜像上传到kind
+
+```
+kind load docker-image registry.cn-hangzhou.aliyuncs.com/google_containers/kube-webhook-certgen:v1.1.1
+
+kind load docker-image registry.cn-hangzhou.aliyuncs.com/google_containers/nginx-ingress-controller:v1.3.0
+
+docker exec -it kind-control-plane crictl images
+```
+
+安装ingress-nginx
+
+```
+# 使用我替换好的配置
+kubectl apply -f k8s/kind/deploy.yaml
 
 kubectl get pods --namespace ingress-nginx
 ```
 
+添加路由和应用
+
+```
+kubectl apply -f k8s/kind/usage.yaml
+```
+
+测试效果
+
+```
+# should output "foo"
+curl 你的ip/foo
+# should output "bar"
+curl 你的ip/bar
+```
