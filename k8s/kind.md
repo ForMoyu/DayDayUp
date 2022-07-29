@@ -1,5 +1,12 @@
 # 使用kind进行本地k8s部署
-
+- [使用kind进行本地k8s部署](#使用kind进行本地k8s部署)
+  - [kind下载](#kind下载)
+  - [操作过程](#操作过程)
+    - [创建集群](#创建集群)
+    - [部署Deployment](#部署deployment)
+    - [部署Service](#部署service)
+    - [部署nginx-ingress](#部署nginx-ingress)
+- [k8s搭建](#k8s搭建)
 ## kind下载
 [快速下载](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
 
@@ -99,3 +106,9 @@ curl 你的ip/foo
 # should output "bar"
 curl 你的ip/bar
 ```
+
+# k8s搭建
+1. kind安装
+2. ingress-nginx安装
+3. harbor仓库搭建
+4. k8s dashboard安装
