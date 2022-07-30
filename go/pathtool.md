@@ -1,13 +1,43 @@
 # GOPATH/bin下的可执行文件的用法
 
 <!-- GFM-TOC -->
-* [GOPATH/bin下的可执行文件的用法](#GOPATH/bin下的可执行文件的用法)
-    * [dlv](#dlv)
-        * [dlv attach](#dlv-attach)
-        * [示例](#示例)
+- [GOPATH/bin下的可执行文件的用法](#gopathbin下的可执行文件的用法)
+	- [vscode debug](#vscode-debug)
+	- [dlv](#dlv)
+		- [dlv attach](#dlv-attach)
+		- [示例](#示例)
 <!-- GFM-TOC -->
+## vscode debug
+launch.json
+
+```
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "base",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/cmd/base",
+            "args": [
+                "-conf",
+                "../../local/dev/config.yaml"
+            ]
+        }
+    ]
+}
+```
+
+program是main包的目录
+${workspaceFolder}是vscode环境[变量](https://zhuanlan.zhihu.com/p/186026657)
+
 
 ## dlv
+实际上vscode已经集成了dlv的功能，我们并不需要自己去调dlv
 go的调试工具
 [GO delve(dlv)调试工具笔记及实操](https://zhuanlan.zhihu.com/p/425645473)
 
