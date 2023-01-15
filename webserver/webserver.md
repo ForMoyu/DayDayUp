@@ -11,6 +11,7 @@
       - [nginx配置](#nginx配置)
       - [域名配置](#域名配置)
     - [搭建qq机器人](#搭建qq机器人)
+      - [真寻机器人](#真寻机器人)
     - [搭建mockingbird服务器](#搭建mockingbird服务器)
     - [安装golang](#安装golang)
     - [服务器支持文件拖拽](#服务器支持文件拖拽)
@@ -326,6 +327,20 @@ chmod +x go-cqhttp.sh
 wget --no-check-certificate https://gitcode.net/anto_july/zbp/-/raw/master/zbp.sh
 chmod +x zbp.sh
 ./zbp.sh 2>&1 | tee zbp.log
+```
+
+#### 真寻机器人
+[安装教程](https://hibikier.github.io/zhenxun_bot/docs/installation_doc/)
+1. go-cqhttp https://github.ffffffff0x.com/https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.0-rc4/go-cqhttp_windows_amd64.exe
+2. postgresql https://get.enterprisedb.com/postgresql/postgresql-15.1-1-windows-x64.exe
+3. python https://mirrors.huaweicloud.com/python/3.8.0/python-3.8.0.exe
+
+C:\Users\Administrator\pip\pip.ini
+```
+[global]
+index-url=http://pypi.tuna.tsinghua.edu.cn/simple/
+[install]
+trusted-host=pypi.tuna.tsinghua.edu.cn 
 ```
 
 ### 搭建mockingbird服务器
