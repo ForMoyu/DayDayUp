@@ -336,7 +336,10 @@ chmod +x zbp.sh
 配置: ws://127.0.0.1:8080/onebot/v11/ws/
 
 2. postgresql https://get.enterprisedb.com/postgresql/postgresql-15.1-1-windows-x64.exe
+https://jingyan.baidu.com/article/4f34706ed5f00ee387b56dc2.html
 3. python https://mirrors.huaweicloud.com/python/3.8.0/python-3.8.0.exe
+源代码：
+https://github.ffffffff0x.com/https://github.com/HibiKier/zhenxun_bot/archive/refs/tags/0.1.6.6.zip
 
 文件配置：
 ```
