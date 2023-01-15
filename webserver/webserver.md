@@ -332,9 +332,22 @@ chmod +x zbp.sh
 #### 真寻机器人
 [安装教程](https://hibikier.github.io/zhenxun_bot/docs/installation_doc/)
 1. go-cqhttp https://github.ffffffff0x.com/https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.0-rc4/go-cqhttp_windows_amd64.exe
+
+配置: ws://127.0.0.1:8080/onebot/v11/ws/
+
 2. postgresql https://get.enterprisedb.com/postgresql/postgresql-15.1-1-windows-x64.exe
 3. python https://mirrors.huaweicloud.com/python/3.8.0/python-3.8.0.exe
 
+文件配置：
+```
+bind: str = ""  # 数据库连接链接
+sql_name: str = "postgresql"
+user: str = "postgres"
+password: str = "zhenxun_bot"
+address: str = "127.0.0.1"
+port: str = "5432"
+database: str = "zhenxun_bot"
+```
 C:\Users\Administrator\pip\pip.ini
 ```
 [global]
