@@ -371,6 +371,27 @@ index-url=http://pypi.tuna.tsinghua.edu.cn/simple/
 trusted-host=pypi.tuna.tsinghua.edu.cn 
 ```
 
+创建数据库
+```
+CREATE TABLE IF NOT EXISTS public.word_bank2
+(
+    id integer NOT NULL DEFAULT nextval('word_bank2_id_seq'::regclass),
+    user_qq bigint NOT NULL,
+    group_id integer,
+    word_scope integer NOT NULL,
+    word_type integer NOT NULL,
+    status boolean NOT NULL,
+    problem character varying COLLATE pg_catalog."default" NOT NULL,
+    answer character varying COLLATE pg_catalog."default" NOT NULL,
+    placeholder character varying COLLATE pg_catalog."default",
+    image_path character varying COLLATE pg_catalog."default",
+    to_me character varying COLLATE pg_catalog."default",
+    create_time timestamp without time zone NOT NULL,
+    update_time timestamp without time zone NOT NULL,
+    CONSTRAINT word_bank2_pkey PRIMARY KEY (id)
+)
+```
+
 ### 搭建mockingbird服务器
 需要通过python运行源码,所以要下载git还有pip下载包
 
