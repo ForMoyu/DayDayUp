@@ -373,6 +373,10 @@ trusted-host=pypi.tuna.tsinghua.edu.cn
 
 创建数据库
 ```
+-- Table: public.word_bank2
+
+-- DROP TABLE IF EXISTS public.word_bank2;
+
 CREATE TABLE IF NOT EXISTS public.word_bank2
 (
     id integer NOT NULL DEFAULT nextval('word_bank2_id_seq'::regclass),
@@ -390,6 +394,26 @@ CREATE TABLE IF NOT EXISTS public.word_bank2
     update_time timestamp without time zone NOT NULL,
     CONSTRAINT word_bank2_pkey PRIMARY KEY (id)
 )
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.word_bank2
+    OWNER to postgres;
+
+-- SEQUENCE: public.word_bank2_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.word_bank2_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.word_bank2_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1
+    OWNED BY word_bank2.id;
+
+ALTER SEQUENCE public.word_bank2_id_seq
+    OWNER TO postgres;
 ```
 
 ### 搭建mockingbird服务器
