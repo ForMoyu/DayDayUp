@@ -331,16 +331,27 @@ chmod +x zbp.sh
 
 #### 真寻机器人
 [安装教程](https://hibikier.github.io/zhenxun_bot/docs/installation_doc/)
-1. go-cqhttp https://github.ffffffff0x.com/https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.0-rc4/go-cqhttp_windows_amd64.exe
+1. notepad++ https://www.onlinedown.net/soft/40308.htm
+
+2. go-cqhttp https://github.ffffffff0x.com/https://github.com/Mrs4s/go-cqhttp/releases/download/v1.0.0-rc4/go-cqhttp_windows_amd64.exe
 
 配置: ws://127.0.0.1:8080/onebot/v11/ws/
 
-2. postgresql https://get.enterprisedb.com/postgresql/postgresql-15.1-1-windows-x64.exe
-https://jingyan.baidu.com/article/4f34706ed5f00ee387b56dc2.html
-http://t.zoukankan.com/ikai-p-14338289.html
-3. python https://mirrors.huaweicloud.com/python/3.8.0/python-3.8.0.exe
+3. postgresql https://get.enterprisedb.com/postgresql/postgresql-15.1-1-windows-x64.exe
+https://www.cnblogs.com/huoniao/articles/6186021.html
+4. python https://mirrors.huaweicloud.com/python/3.9.0/python-3.9.0-amd64.exe
 源代码：
-https://github.ffffffff0x.com/https://github.com/HibiKier/zhenxun_bot/archive/refs/tags/0.1.6.6.zip
+https://github.ffffffff0x.com/https://github.com/HibiKier/zhenxun_bot/archive/refs/heads/main.zip
+
+1. 可能需要下载的东西
+编译工具1:
+https://download.approximatrix.com/simplyfortran/3.3/simplyfortran-3.3.msi
+编译工具2:
+https://www.microsoft.com/en-us/download/confirmation.aspx?id=48159
+编译工具3:
+https://visualstudio.microsoft.com/visual-cpp-build-tools/
+
+
 
 文件配置：
 ```
